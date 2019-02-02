@@ -738,8 +738,8 @@ LoggerConnect(
   // Cleanup.
   //
 
-  NtFreeVirtualMemory(NtCurrentProcess(), &BitmapBuffer, &BitmapBufferSize, MEM_FREE);
-  NtFreeVirtualMemory(NtCurrentProcess(), &MemoryBuffer, &MemoryBufferSize, MEM_FREE);
+  NtFreeVirtualMemory(NtCurrentProcess(), &BitmapBuffer, &BitmapBufferSize, MEM_RELEASE);
+  NtFreeVirtualMemory(NtCurrentProcess(), &MemoryBuffer, &MemoryBufferSize, MEM_RELEASE);
 
   NtClose(DisconnectEvent);
   NtClose(DataAvailableEvent);
